@@ -1,5 +1,6 @@
 <template>
-  <div>hello</div>
+  <Nav />
+  <Footer />
 </template>
 
 <script setup></script>
