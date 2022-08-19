@@ -3,13 +3,21 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
+import { useUserStore} from "@/stores/user";
+import {useUserStore} from "@/stores/task";
 // constant to save a variable that define the custom event that will be emitted to the homeView
 
-// constant to save a variable that holds the value of the title input field of the new task
 
+// constant to save a variable that holds the value of the title input field of the new task
+const title = ref(null);
 // constant to save a variable that holds the value of the description input field of the new task
+const taskStore = userTaskStore();
 
 // constant to save a variable that holds an initial false boolean value for the errorMessage container that is conditionally displayed depending if the input field is empty
+const errorInput = () => {
+  title.value = "";
+};
 
 // const constant to save a variable that holds the value of the error message
 

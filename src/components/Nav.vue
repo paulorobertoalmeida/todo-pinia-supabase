@@ -86,8 +86,11 @@ import { useRouter } from "vue-router";
 import { useUserStore } from "../store/user.js";
 // constant that calls user email from the useUSerStore
 const router = useRouter();
+
+// constant that saves the user email and cleans out the @client from the user
 const userStore = useUserStore();
 
+// async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 async function signOut() {
   try {
     router.push({ path: "/auth" });
@@ -98,13 +101,6 @@ async function signOut() {
 }
 
 
-
-
-
-
-// constant that saves the user email and cleans out the @client from the user
-
-// async function that calls the signOut method from the useUserStore and pushes the user back to the Auth view.
 </script>
 
 <style></style>

@@ -12,7 +12,8 @@
       class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500"
     >
       <input
-        :type="text"
+        type="text"
+        v-model="email"
         placeholder="Email or Username"
         class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
       />

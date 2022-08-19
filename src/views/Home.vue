@@ -12,7 +12,7 @@
 import {ref} from "vue";
 import { storeToRefs } from "pinia";
 // 3. Tasks are going to be contained in an array here!
-const Tasks = [];
+const Tasks =  ref([]);
 
 // 4. An async function is needed to get all of the tasks stored within the supabase database, this async function's body will contain the tasks value which be use to store the fetchTasks method which lives inside the userTaskStore. This function needs to be called within the setUp script in order to run within the first instance of this component lifecycle.
 const updateTask = async(taskId) => {

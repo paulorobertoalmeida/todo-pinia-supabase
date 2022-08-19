@@ -12,97 +12,106 @@
     "
   >
     <!-- component -->
-    <section class="flex w-[30rem] flex-col space-y-10">
+    <form class="flex w-[30rem] flex-col space-y-10">
       <div class="text-center text-4xl font-medium">Sign In</div>
-      <PersonalRouter :route="route" :buttonText="buttonText" />
-      <div
-        class="
-          w-full
-          transform
-          border-b-2
-          bg-transparent
-          text-lg
-          duration-300
-          focus-within:border-indigo-500
-        "
-      >
-        <input
-          :type="text"
-          placeholder="Email"
+     
+        <PersonalRouter :route="route" :buttonText="buttonText" />
+        <div
           class="
             w-full
-            border-none
+            transform
+            border-b-2
             bg-transparent
-            outline-none
-            placeholder:italic
-            focus:outline-none
+            text-lg
+            duration-300
+            focus-within:border-indigo-500
           "
-        />
-      </div>
+        >
+        <p class="">paulo.roberto.a@hotmail.com</p>
+          <input
+            type="text"
+            placeholder="Email"
+            class="
+              w-full
+              border-none
+              bg-transparent
+              outline-none
+              placeholder:italic
+              focus:outline-none
+            "
+          />
+        </div>
 
-      <div
-        class="
-          w-full
-          transform
-          border-b-2
-          bg-transparent
-          text-lg
-          duration-300
-          focus-within:border-indigo-500
-        "
-      >
-        <input
-          :type="password"
-          v-model="password"
-          placeholder="Password"
+        <div
           class="
             w-full
-            border-none
+            transform
+            border-b-2
             bg-transparent
-            outline-none
-            placeholder:italic
-            focus:outline-none
+            text-lg
+            duration-300
+            focus-within:border-indigo-500
           "
-        />
-      </div>
+        >
+          <input
+            type="password"
+            v-model="password"
+            placeholder="Password"
+            class="
+              w-full
+              border-none
+              bg-transparent
+              outline-none
+              placeholder:italic
+              focus:outline-none
+            "
+          />
+        </div>
 
-      <button
-        type="submit"
-        class=" button
-          transform
-          rounded-sm
-          bg-indigo-600
-          py-2
-          font-bold
-          duration-300
-          hover:bg-indigo-400
-        "
-      >
-        LOG IN
-      </button>
+        <button
+          @submit.prevent="button"
+          type="submit"
+          class="
+            transform
+            rounded-sm
+            bg-indigo-600
+            py-2
+            font-bold
+            duration-300
+            hover:bg-indigo-400
+          "
+        >
+          LOG IN
+        </button>
 
-      <a
-        href="#"
-        class="
-          transform
-          text-center
-          font-semibold
-          text-gray-500
-          duration-300
-          hover:text-gray-300
-        "
-        >FORGOT PASSWORD?</a
-      >
-
-      <p class="text-center text-lg">
-        No account?
         <a
           href="#"
-          class="font-medium text-indigo-500 underline-offset-4 hover:underline"
-          >Create One</a
+          class="
+            transform
+            text-center
+            font-semibold
+            text-gray-500
+            duration-300
+            hover:text-gray-300
+          "
+          >FORGOT PASSWORD?</a
         >
-      </p>
-    </section>
+
+        <p class="text-center text-lg">
+          No account?
+          <a
+            href="#"
+            class="
+              font-medium
+              text-indigo-500
+              underline-offset-4
+              hover:underline
+            "
+            >Create One</a
+          >
+        </p>
+      
+    </form>
   </main>
 
   <!-- <div>Sign In</div>
