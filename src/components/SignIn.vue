@@ -1,8 +1,10 @@
 <template>
   <div>Sign In</div>
   <PersonalRouter :route="route" :buttonText="buttonText" />
-  <p>Time to build up the Final Project!</p>
-  <p class="wu-text">Wu Tang Forever</p>
+  <form action="">
+    <input :type="text">
+    <input type="text">
+  </form>
 </template>
 
 <script setup>
@@ -12,27 +14,21 @@ import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
 import { storeToRefs } from "pinia";
-
 // Route Variables
 const route = "/auth/sign-up";
 const buttonText = "Test the Sign Up Route";
-
 // Input Fields
 const email = ref("");
 const password = ref("");
-
 // Error Message
 const errorMsg = ref("");
-
 //Show hide password variables
 const passwordFieldType = computed(() =>
   hidePassword.value ? "password" : "text"
 );
 const hidePassword = ref(true);
-
 // Router to push user once SignedIn to the HomeView
 const redirect = useRouter();
-
 // Arrow function to Signin user to supaBase
 const signIn = async () => {
   try {
@@ -55,7 +51,6 @@ const signIn = async () => {
 .wu-text {
   color: black;
 }
-
 .form {
   display: flex;
   flex-direction: column;
