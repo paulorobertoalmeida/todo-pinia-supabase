@@ -13,7 +13,7 @@
   >
     <!-- component -->
     <section class="flex w-[30rem] flex-col space-y-10">
-      <div class="text-center text-4xl font-medium">Log In</div>
+      <div class="text-center text-4xl font-medium">Sign In</div>
       <PersonalRouter :route="route" :buttonText="buttonText" />
       <div
         class="
@@ -53,6 +53,7 @@
       >
         <input
           :type="password"
+          v-model="password"
           placeholder="Password"
           class="
             w-full
@@ -114,43 +115,28 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
-import PersonalRouter from "./PersonalRouter.vue";
-import { supabase } from "../supabase";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { useUserStore } from "../stores/user";
-import { storeToRefs } from "pinia";
-// Route Variables
-const route = "/auth/sign-up";
-const buttonText = "Test the Sign Up Route";
-// Input Fields
+import { useUserStore } from "@/stores/user";
+
+const router = useRouter();
 const email = ref("");
 const password = ref("");
-// Error Message
-const errorMsg = ref("");
-//Show hide password variables
-const passwordFieldType = computed(() =>
-  hidePassword.value ? "password" : "text"
-);
-const hidePassword = ref(true);
-// Router to push user once SignedIn to the HomeView
-const redirect = useRouter();
-// Arrow function to Signin user to supaBase
-const signIn = async () => {
-  try {
-    // calls the user store and send the users info to backend to logIn
-    await useUserStore().signIn(email.value, password.value);
-    // redirects user to the homeView
-    redirect.push({ path: "/" });
-  } catch (error) {
-    // displays error message
-    errorMsg.value = `Error: ${error.message}`;
-    // hides error message
-    setTimeout(() => {
-      errorMsg.value = null;
-    }, 5000);
+const errorMsg = ref(null);
+const userStore = useUserStore();
+
+async function signIn() {
+  if (password.value && email.value) {
+    try {
+      await userStore.signIn(email.value, password.value);
+      router.push({ path: "/" });
+    } catch (e) {
+      errorMsg.value = e.message;
+    }
+  } else {
+    errorMsg.value = "Please enter valid login details";
   }
-};
+}
 </script>
 
 <style>

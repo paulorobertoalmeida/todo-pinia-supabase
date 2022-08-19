@@ -79,10 +79,28 @@
 
 <script setup>
 //constant to save a variable that will hold the use router method
+import { useRouter } from "vue-router";
 
 // constant to save a variable that will get the user from store with a computed function imported from vue
 
+import { useUserStore } from "../store/user.js";
 // constant that calls user email from the useUSerStore
+const router = useRouter();
+const userStore = useUserStore();
+
+async function signOut() {
+  try {
+    router.push({ path: "/auth" });
+    userStore.signOut();
+  } catch (e) {
+    alert(e);
+  }
+}
+
+
+
+
+
 
 // constant that saves the user email and cleans out the @client from the user
 
