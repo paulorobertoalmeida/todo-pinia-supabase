@@ -22,8 +22,16 @@
       class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500"
     >
       <input
-        :type="password"
+        type="password"
         v-model="password"
+        placeholder="Password"
+        class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
+      />
+    </div>
+    <div w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500>
+      <input
+        type="password"
+        v-model="confirmPassword"
         placeholder="Password"
         class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none"
       />
