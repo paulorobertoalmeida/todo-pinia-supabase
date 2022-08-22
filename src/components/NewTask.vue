@@ -3,9 +3,9 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref, onMounted } from 'vue';
 import { useUserStore} from "@/stores/user";
-import {useUserStore} from "@/stores/task";
+import {useUserTask} from "@/stores/task";
 // constant to save a variable that define the custom event that will be emitted to the homeView
 
 

@@ -1,15 +1,24 @@
 <template>
+<div>
+  <p>eso me va aparecer?</p>
  <!-- 2. (NewTask, TaskItem, Footer, Nav) components are used here!  -->
   <Nav />
   <TaskItem />
   <NewTask />
   <h1>Hello MotoMami</h1>
   <Footer />
+  <p>pq no me aparece</p>
+  </div>
 </template>
 
 <script setup>
 // 1. ref() is used here!
-import {ref} from "vue";
+import { ref, onMounted } from 'vue'
+import Nav from "../components/Nav.vue";
+import TaskItem from "../components/TaskItem.vue";
+import NewTaskVue from "../components/NewTask.vue";
+import Footer from "../components/Footer.vue";
+
 import { storeToRefs } from "pinia";
 // 3. Tasks are going to be contained in an array here!
 const Tasks =  ref([]);

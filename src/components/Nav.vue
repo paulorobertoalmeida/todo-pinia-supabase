@@ -50,7 +50,7 @@
 					</ul>
 				</li>
 				<!-- Services -->
-				<li class="dropdown">
+				<!-- <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 						<span class="fa fa-gears"></span><span class="link"> Services</span> <span class="fa fa-caret-down"></span></a>
 					<ul class="dropdown-menu">
@@ -58,11 +58,18 @@
 						<li><a href="#"><span class="fa fa-gear"/></span> Service 2</a></li>
 						<li><a href="#"><span class="fa fa-gear"/></span> Service 3</a></li>
 					</ul>
-				</li>
+				</li> -->
 				<!-- About -->
+
+				
 				<li><a href="#"><span class="fa fa-info-circle"></span><span class="link"> About</span></a></li>
 				<!-- Contact -->
 				<li><a href="#"><span class="fa fa-phone"></span><span class="link"> Contact</span></a></li>
+				<!-- Log out-->
+				<li>
+					<a :to="route" id="signout" class="button-red" @click="signOut"> <span class="fa fa-info-circle"></span><span class="link"> Sign Out</span></a>
+
+				</li>
 			</ul>
 			<!-- Nav Right -->
 			<form class="navbar-form navbar-right">
@@ -80,10 +87,11 @@
 <script setup>
 //constant to save a variable that will hold the use router method
 import { useRouter } from "vue-router";
+import Nav from "./Nav.vue"
 
 // constant to save a variable that will get the user from store with a computed function imported from vue
 
-import { useUserStore } from "../store/user.js";
+import { useUserStore } from "@/store/user.js";
 // constant that calls user email from the useUSerStore
 const router = useRouter();
 

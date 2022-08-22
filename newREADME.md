@@ -79,6 +79,13 @@
 </details>
 
 
+# First Day:
+
+Setting up the application and create the Sign in / Sign up connections.
+
+
+
+
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
