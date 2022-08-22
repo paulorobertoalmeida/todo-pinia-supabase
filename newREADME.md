@@ -81,7 +81,7 @@
 
 # First Day:
 
-Setting up the application and create the Sign in / Sign up connections.
+Setting up the application and create the Sign in / Sign up
 
 
 

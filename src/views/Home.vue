@@ -1,13 +1,12 @@
 <template>
 <div>
-  <p>eso me va aparecer?</p>
  <!-- 2. (NewTask, TaskItem, Footer, Nav) components are used here!  -->
   <Nav />
   <TaskItem />
   <NewTask />
-  <h1>Hello MotoMami</h1>
+  
   <Footer />
-  <p>pq no me aparece</p>
+  
   </div>
 </template>
 
@@ -16,12 +15,22 @@
 import { ref, onMounted } from 'vue'
 import Nav from "../components/Nav.vue";
 import TaskItem from "../components/TaskItem.vue";
-import NewTaskVue from "../components/NewTask.vue";
+import NewTask from "../components/NewTask.vue";
 import Footer from "../components/Footer.vue";
 
 import { storeToRefs } from "pinia";
+import { useUserStore } from '../store/user.js';
+import { useTaskStore } from '../store/task.js';
 // 3. Tasks are going to be contained in an array here!
-const Tasks =  ref([]);
+const userStore = useUserStore();
+const taskStore = useTaskStore();
+const { tasks } = storeToRefs(taskStore);
+const { user } = storeToRefs(userStore);
+
+let loading = ref(true);
+let editedTask = ref(null);
+let editingTask = ref(null);
+const errorMsg = ref(null);
 
 // 4. An async function is needed to get all of the tasks stored within the supabase database, this async function's body will contain the tasks value which be use to store the fetchTasks method which lives inside the userTaskStore. This function needs to be called within the setUp script in order to run within the first instance of this component lifecycle.
 const updateTask = async(taskId) => {
@@ -33,7 +42,25 @@ const updateTask = async(taskId) => {
   }
 };
 
+const editTask = async (title, taskId) => {
+  editedTask.value = title;
+  editingTask.value = taskId;
+}
 
+onMounted(async () => {
+  console.log('tasks', tasks.value);
+  try {
+    await taskStore.fetchTasks();
+    loading.value = false;
+  } catch (e) {
+    errorMsg.value = e.message;
+    loading.value = false;
+  }
+
+  if (!user.value.confirmed_at) {
+    alert('Supabase has sent an email to ${user.value.email} please click the link in this email to confirm your account')
+  }
+});
 // 5. NewTask component will receive a customEvent on this instance of the homeView that will fire the add-to-do function
 // 6. add-to-do function will receive 2 params/arguments that will tak a taskTitle and a taskDescription and the body of this async function will call the taskStore that calls the addTask function from the store that pushes the info of the task to the backEnd. This is possible by passing the 2 param/arguments that will be passed by the user from the inputs within the NewTask Component. 
 
@@ -43,6 +70,7 @@ const updateTask = async(taskId) => {
 
 // 7.2-customEvent will fire an asynf function that will take in 1 param/argument. This async function's body will be used to call the deleteTaskmethod which will take the param/argument's id in order to delete the task. This function needs to call the function mentioned on hint4. 
 // 7.3-customEvent will fire an async function that will take in 1 param/argument. this async function's body will be used to take in 2 constants. 1 constant will take in the param/argument newValue. 1 constant will be used to get the param/argument oldValue id. These 2 constants will be sent to the backend via the useTaskStore which holds an editTask method. This function needs to call the function mentioned on hint4.
+
 
 </script>
 
