@@ -73,35 +73,53 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
+import PersonalRouter from "./PersonalRouter.vue";
+import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
 import { useUserStore } from "../stores/user";
-
-const router = useRouter();
+import { storeToRefs } from "pinia";
+// Route Variables
+const route = "/auth/login";
+const buttonText = "Sign In";
+// Input Fields
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
-const errorMsg = ref(null);
-
-const userStore = useUserStore();
-
-async function signUp() {
+// Error Message
+const errorMsg = ref("");
+// Show hide password variable
+const passwordFieldType = computed(() =>
+  hidePassword.value ? "password" : "text"
+);
+const hidePassword = ref(true);
+// Show hide confrimPassword variable
+const confirmPasswordFieldType = computed(() =>
+  hideConfirmPassword.value ? "password" : "text"
+);
+const hideConfirmPassword = ref(true);
+// Router to push user once SignedUp to Log In
+const redirect = useRouter();
+// Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
+const signUp = async () => {
   if (password.value === confirmPassword.value) {
     try {
-      await userStore.signUp(
-        email.value,
-        password.value,
-        confirmPassword.value
-      );
-      router.push({ path: "/auth/login" });
-    } catch (e) {
-      console.log("error");
-      errorMsg.value = "Could not sign you up please contact support";
+      // calls the user store and send the users info to backend to logIn
+      await useUserStore().signUp(email.value, password.value);
+      // redirects user to the homeView
+      redirect.push({ path: "/auth/login" });
+    } catch (error) {
+      // displays error message
+      errorMsg.value = error.message;
+      // hides error message
+      setTimeout(() => {
+        errorMsg.value = null;
+      }, 5000);
     }
-  } else {
-    errorMsg.value = "Please enter valid login details";
+    return;
   }
-}
+  errorMsg.value = "error";
+};
 </script>
 
 <style>
