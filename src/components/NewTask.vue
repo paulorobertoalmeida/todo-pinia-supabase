@@ -1,5 +1,20 @@
 <template>
-  <div>New Task Component</div>
+    <form
+    id="new-task"
+    @submit.prevent="createNewTask"
+  >
+    <input
+      v-model="title"
+      type="text"
+      name="new-task"
+      class="text"
+      minlength="4"
+      placeholder="New Task"
+    >
+    <button class="submit">
+      Submit
+    </button>
+  </form>
 </template>
 
 <script setup>
@@ -22,6 +37,17 @@ const errorInput = () => {
 // const constant to save a variable that holds the value of the error message
 
 // arrow function to call the form holding the task title and task description that uses a conditional to first checks if the task title is empty, if true the error message is displayed through the errorMessage container and sets a timeOut method that hides the error after some time. Else, its emmits a custom event to the home view with the task title and task description; clears the task title and task description input fields.
+
+
+async function createNewTask() {
+  try {
+    console.log(title.value)
+    await taskStore.createTask(title.value, userStore.user.id)
+    clearInput()
+  } catch (e) {
+    alert('could not add task')
+  }
+}
 </script>
 
 <style></style>

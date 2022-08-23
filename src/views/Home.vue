@@ -19,8 +19,8 @@ import NewTask from "../components/NewTask.vue";
 import Footer from "../components/Footer.vue";
 
 import { storeToRefs } from "pinia";
-import { useUserStore } from '../store/user.js';
-import { useTaskStore } from '../store/task.js';
+import { useUserStore } from '@/store/user.js';
+import { useTaskStore } from '@/store/task.js';
 // 3. Tasks are going to be contained in an array here!
 const userStore = useUserStore();
 const taskStore = useTaskStore();
