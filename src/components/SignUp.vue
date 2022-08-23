@@ -91,7 +91,7 @@
           type="password"
           v-model="confirmPassword"
           required
-          placeholder="Password"
+          placeholder="**********"
           class="
             w-full
             border-none
@@ -106,6 +106,7 @@
       <button
         type="submit"
         class="
+        button
           transform
           rounded-sm
           bg-indigo-600
@@ -159,7 +160,7 @@ import { ref, computed } from "vue";
 import PersonalRouter from "./PersonalRouter.vue";
 import { supabase } from "../supabase";
 import { useRouter } from "vue-router";
-import { useUserStore } from "../stores/user";
+import { useUserStore } from "@/stores/user";
 import { storeToRefs } from "pinia";
 // Route Variables
 const route = "/auth/login";
@@ -190,7 +191,8 @@ const signUp = async () => {
       await useUserStore().signUp(email.value, password.value);
       // redirects user to the homeView
       redirect.push({ path: "/auth/login" });
-    } catch (error) {
+    }
+    catch (error) {
       // displays error message
       errorMsg.value = error.message;
       // hides error message
@@ -200,7 +202,7 @@ const signUp = async () => {
     }
     return;
   }
-  errorMsg.value = "error";
+  errorMsg.value = "Passwords are not the same :(";
 };
 </script>
 
