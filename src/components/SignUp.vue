@@ -78,14 +78,14 @@
           "
         />
       </div>
-      <div
+      <div class="
         w-full
         transform
         border-b-2
         bg-transparent
         text-lg
         duration-300
-        focus-within:border-indigo-500
+        focus-within:border-indigo-500"
       >
         <input
           type="password"

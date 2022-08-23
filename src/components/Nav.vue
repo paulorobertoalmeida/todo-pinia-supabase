@@ -7,10 +7,10 @@
       z-30
       top-10
       py-1
-      bg-white
+      bg-[#5D4A66]
       shadow-lg
-      border-b border-blue-400
-      mt-24
+      
+      
     "
   >
     <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
@@ -44,7 +44,7 @@
               md:flex
               items-center
               justify-between
-              text-base text-blue-600
+              text-base text-white
               pt-4
               md:pt-0
             "
@@ -66,20 +66,6 @@
               >
             </li>
             <li>
-              <a
-                class="
-                  inline-block
-                  no-underline
-                  hover:text-black
-                  font-medium
-                  text-lg
-                  py-2
-                  px-4
-                  lg:-ml-2
-                "
-                href="#"
-                >Products</a
-              >
             </li>
             <li>
               <a :to="route" id="signout" class="button-red" @click="signOut">
@@ -104,18 +90,19 @@
         id="nav-content"
       >
         <div class="auth flex items-center w-full md:w-full">
-          <p>
+          <p p-2>
             Welcome <span class="usuario-name">{{ emailName[0] }}</span>
           </p>
           <button
             @click="signOut"
             class="
               button
-              bg-blue-600
+              bg-[#3EB642]
               text-gray-200
               p-2
               rounded
-              hover:bg-blue-500 hover:text-gray-100
+              hover:bg-[#579A5D]hover:text-gray-100
+              mr-2
             "
           >
             Log Out
@@ -124,8 +111,6 @@
       </div>
     </div>
   </nav>
-
-  <h1>hello</h1>
 </template>
 
 <script setup>
