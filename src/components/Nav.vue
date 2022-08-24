@@ -7,8 +7,9 @@
       z-30
       top-10
       py-1
-      bg-[#5D4A66]
+      bg-[#0b050e]
       shadow-lg
+      
       
       
     "
@@ -16,7 +17,7 @@
     <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
       <label for="menu-toggle" class="cursor-pointer md:hidden block">
         <svg
-          class="fill-current text-blue-600"
+          class="fill-current  text-gray-200"
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
@@ -54,7 +55,7 @@
                 class="
                   inline-block
                   no-underline
-                  hover:text-black
+                  hover:text-white
                   font-medium
                   text-lg
                   py-2
@@ -89,9 +90,9 @@
         "
         id="nav-content"
       >
-        <div class="auth flex items-center w-full md:w-full">
-          <p p-2>
-            Welcome <span class="usuario-name">{{ emailName[0] }}</span>
+        <div class="auth flex items-center w-full md:w-full  text-gray-200">
+          <p>
+            Welcome <span class="usuario-name  text-gray-200">{{ emailName[0] }}</span>
           </p>
           <button
             @click="signOut"
@@ -110,6 +111,7 @@
         </div>
       </div>
     </div>
+    <hr class="text-white mx-5" />
   </nav>
 </template>
 

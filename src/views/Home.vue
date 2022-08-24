@@ -1,21 +1,23 @@
 <template>
-<div>
- <!-- 2. (NewTask, TaskItem, Footer, Nav) components are used here!  -->
-  <Nav />
-  <NewTask @add-task="setNewTask"/>
-  <TaskItem :tasks="addNewTask.tasks"
-    @toggle-reminder="toggleReminder" 
-    @delete-task="deleteTaskArr"/>
+    <Nav />
+    <div class="main-container">
+      <div class="inner-container">
+        <NewTask @add-task="setNewTask" />
+        <TaskItem
+          :tasks="addNewTask.tasks"
+          @toggle-reminder="toggleReminder"
+          @delete-task="deleteTaskArr"
+        />
+      </div>
+    </div>
+    <Footer />
   
-  <Footer />
-  
-  </div>
 </template>
 
 <script setup>
 // 1. ref() is used here!
-import { ref } from 'vue'
-import { useTaskStore } from "../stores/task"
+import { ref } from "vue";
+import { useTaskStore } from "../stores/task";
 import Nav from "../components/Nav.vue";
 import TaskItem from "../components/TaskItem.vue";
 import NewTask from "../components/NewTask.vue";
@@ -28,20 +30,34 @@ const addNewTask = useTaskStore();
 // };
 addNewTask.fetchTasks();
 // console.log(addNewTask.tasks)
-async function setNewTask(task){
+async function setNewTask(task) {
   await addNewTask.addTask(task.name, task.description);
-};
-async function toggleReminder(task){
-  // addNewTask.tasks = addNewTask.tasks.map((task) => 
+}
+async function toggleReminder(task) {
+  // addNewTask.tasks = addNewTask.tasks.map((task) =>
   // task.user_id === id ? {...task, is_complete: !task.is_complete} : task
   // );
   // await addNewTask.toggleTask();
   console.log(task);
 }
-async function deleteTaskArr(task){
+async function deleteTaskArr(task) {
   // await addNewTask.deleteTask();
 }
-
 </script>
 
-<style></style>
+<style>
+.main-container{
+  @apply bg-black 
+      w-full
+      flex
+      items-center
+      justify-center
+      bg-teal-lightest
+      font-sans
+      @layer h-100
+}
+.inner-container{
+  @apply bg-white rounded shadow  m-4 w-full lg:w-3/4 lg:max-w-lg
+  @layer p-6
+}
+</style>

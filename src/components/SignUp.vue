@@ -14,7 +14,7 @@
     "
   >
     <!-- component -->
-    <section
+    <form
       class="form-sign-in flex w-[30rem] flex-col space-y-10"
       @submit.prevent="signUp"
     >
@@ -87,7 +87,7 @@
         duration-300
         focus-within:border-indigo-500"
       >
-        <input
+        <input 
           type="password"
           v-model="confirmPassword"
           required
@@ -103,7 +103,7 @@
         />
       </div>
 
-      <button
+      <button 
         type="submit"
         class="
         button
@@ -142,7 +142,7 @@
       </p>
     <div v-show="errorMsg">{{errorMsg}}</div>
 
-    </section>
+  </form>
   </main>
 
   <!-- <div>Sign Up</div>
@@ -185,6 +185,7 @@ const hideConfirmPassword = ref(true);
 const redirect = useRouter();
 // Arrow function to SignUp user to supaBase with a timeOut() method for showing the error
 const signUp = async () => {
+  console.log("primer console log")
   if (password.value === confirmPassword.value) {
     try {
       // calls the user store and send the users info to backend to logIn
@@ -200,6 +201,7 @@ const signUp = async () => {
         errorMsg.value = null;
       }, 5000);
     }
+    console.log("he entrado en sighn up")
     return;
   }
   errorMsg.value = "Passwords are not the same :(";

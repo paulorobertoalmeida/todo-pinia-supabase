@@ -80,7 +80,6 @@
       </div>
 
       <button
-        @submit.prevent="button"
         type="submit"
         class="
           transform

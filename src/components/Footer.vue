@@ -52,25 +52,7 @@
           >
         </span>
       </h1>
-      <div
-        class="
-          mx-auto
-          rounded-lg
-          font-black
-          mt-5
-          text-zinc-400
-          md:mt-12 md:max-w-lg
-          text-center
-          lg:text-lg
-        "
-      >
-        <button
-          class="bg-tkb border text-sm text-white py-3 px-7 rounded-full"
-          onClick="{signInNow}"
-        >
-          Join Sahilnetic
-        </button>
-      </div>
+      
     </div>
   </section>
 
@@ -83,7 +65,7 @@
         </div>
 
         <p class="mt-4 text-sm text-center text-gray-400 lg:text-right lg:mt-0">
-          T&C &nbsp; Career &nbsp; Privacy & Policy &nbsp; Developers
+          Made with tailwind &nbsp; Paulo Almeida &nbsp; Privacy & Policy &nbsp; TodoApp
         </p>
       </div>
     </div>
