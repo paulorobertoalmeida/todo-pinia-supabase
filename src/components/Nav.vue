@@ -9,9 +9,6 @@
       py-1
       bg-[#0b050e]
       shadow-lg
-      
-      
-      
     "
   >
     <div class="w-full flex items-center justify-between mt-0 px-6 py-2">

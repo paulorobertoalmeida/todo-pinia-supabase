@@ -21,6 +21,12 @@ Fix my blank screen and create task interactions
   - Trying to solve task problems
   - Reading Documentation to solve my issues
 
-## Forth Day: 
+## Forth Day: Wednesday
 
 * Having all functionalities working together and try to create new interactions
+
+* What I did: 
+    - Fixed Sign in funcionality
+    - improved new tasks 
+    - Pushing tasks to database
+    - Fixed TaskItem bugs 

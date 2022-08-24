@@ -30,7 +30,7 @@
           focus-within:border-indigo-500
         "
       >
-        <p class="">paulo.roberto.a@hotmail.com</p>
+        <p class="">nenoxvx@icloud.com</p>
         <input
           type="email"
           placeholder="example@gmail.com"

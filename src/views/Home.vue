@@ -1,7 +1,15 @@
 <template>
     <Nav />
-    <div class="main-container">
-      <div class="inner-container">
+    <div class="bg-black 
+      w-full
+      flex
+      items-center
+      justify-center
+      bg-teal-lightest
+      font-sans
+      h-100">
+      <div class="bg-white rounded shadow  m-4 w-full lg:w-3/4 lg:max-w-lg
+   p-6">
         <NewTask @add-task="setNewTask" />
         <TaskItem
           :tasks="addNewTask.tasks"
@@ -46,18 +54,4 @@ async function deleteTaskArr(task) {
 </script>
 
 <style>
-.main-container{
-  @apply bg-black 
-      w-full
-      flex
-      items-center
-      justify-center
-      bg-teal-lightest
-      font-sans
-      @layer h-100
-}
-.inner-container{
-  @apply bg-white rounded shadow  m-4 w-full lg:w-3/4 lg:max-w-lg
-  @layer p-6
-}
 </style>
