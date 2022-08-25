@@ -1,15 +1,14 @@
 <template>
     <Nav />
-    <div class="bg-black 
+    <div class="h-100 bg-black 
       w-full
       flex
       items-center
       justify-center
       bg-teal-lightest
       font-sans
-      h-100">
-      <div class="bg-white rounded shadow  m-4 w-full lg:w-3/4 lg:max-w-lg
-   p-6">
+      ">
+      <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
         <NewTask @add-task="setNewTask" />
         <TaskItem
           :tasks="addNewTask.tasks"

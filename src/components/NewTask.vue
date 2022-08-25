@@ -1,6 +1,6 @@
 <template>
   <!-- component -->
-  <div id="new-task" @submit.prevent="createNewTask">
+  <form id="new-task" @submit.prevent="createNewTask">
     <div v-if="showErrorMessage">
       <p class="error-text text-white">{{ errorMessage }}</p>
     </div>
@@ -47,7 +47,7 @@
               border-2
               rounded
               text-teal
-              border-teal
+              border-blue
               hover:text-white hover:bg-teal
             "
           >
@@ -55,7 +55,7 @@
           </button>
         </div>
       </div>
-      <div>
+      <!-- <div>
         <div class="flex mb-4 items-center">
           <p class="w-full text-grey-darkest">
             Add another component to Tailwind Components
@@ -119,9 +119,9 @@
               border-red
               hover:text-white hover:bg-red">Remove</button>
         </div>
-      </div>
+      </div> -->
     </div>
-  </div>
+  </form>
 </template>
 
 <script setup>
@@ -170,5 +170,4 @@ const errorFunction = () => {
 };
 </script>
 <style>
-
 </style>
