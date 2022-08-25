@@ -1,32 +1,33 @@
 <template>
-  <Nav />
-  <div
-    class="
-      h-300
-      bg-black
-      w-full
-      flex
-      items-center
-      justify-center
-      bg-teal-lightest
-      font-sans
-    "
-  >
-    <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-      <NewTask @add-task="setNewTask" />
-      <TaskItem
-        :tasks="addNewTask.tasks"
-        @toggle-reminder="toggleReminder"
-        @delete-task="deleteTaskArr"
-        @change-name="changeName"
-      />
+  <div class="bg-black">
+    <Nav />
+    <div
+      class="
+        h-300
+        bg-black
+        w-full
+        flex
+        items-center
+        justify-center
+        bg-teal-lightest
+        font-sans
+      "
+    >
+      <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+        <NewTask @add-task="setNewTask" />
+        <TaskItem
+          :tasks="addNewTask.tasks"
+          @toggle-reminder="toggleReminder"
+          @delete-task="deleteTaskArr"
+          @change-name="changeName"
+        />
+      </div>
     </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <script setup>
-// 1. ref() is used here!
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import Nav from "../components/Nav.vue";
@@ -37,24 +38,23 @@ import Footer from "../components/Footer.vue";
 const addNewTask = useTaskStore();
 
 addNewTask.fetchTasks();
- console.log(addNewTask.tasks)
-async function setNewTask(task){
+console.log(addNewTask.tasks);
+async function setNewTask(task) {
   await addNewTask.addTask(task.name, task.description);
   addNewTask.fetchTasks();
-};
-async function toggleReminder(task){
+}
+async function toggleReminder(task) {
   await addNewTask.toggleTask(task.is_complete, task.id);
   addNewTask.fetchTasks();
-};
-async function deleteTaskArr(task){
+}
+async function deleteTaskArr(task) {
   await addNewTask.deleteTask(task.id);
   addNewTask.fetchTasks();
-};
-async function changeName(task){
+}
+async function changeName(task) {
   await addNewTask.editTask(task.title, task.id);
   addNewTask.fetchTasks();
 }
-
 </script>
 
 <style>

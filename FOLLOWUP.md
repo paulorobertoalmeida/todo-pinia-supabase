@@ -30,3 +30,11 @@ Fix my blank screen and create task interactions
     - improved new tasks 
     - Pushing tasks to database
     - Fixed TaskItem bugs 
+## Fifth Day: Thursday
+* Having changing functionality working
+
+* What I did:
+  - Create the Presentation 
+  - Improved UI
+
+## Last Day: Friday

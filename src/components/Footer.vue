@@ -1,75 +1,77 @@
 <template>
-  <section class="bg-black">
-    <div
-      class="
-        max-w-lg
-        bg-black
-        px-4
-        pt-24
-        py-8
-        mx-auto
-        text-left
-        md:max-w-none md:text-center
-      "
-    >
-      <h1
+  <div class="bg-black ">
+    <section>
+      <div
         class="
-          text-3xl
-          font-extrabold
-          leading-10
-          tracking-tight
-          text-left text-white text-center
-          sm:leading-none
-          md:text-6xl
-          text-4xl
-          lg:text-7xl
+          max-w-lg
+          bg-black
+          px-4
+          pt-24
+          py-8
+          mx-auto
+          text-left
+          md:max-w-none md:text-center
         "
       >
-        <span class="inline md:block">Vue3-Pinia-Supabase</span>
-        <span
+        <h1
           class="
-            mt-2
-            bg-clip-text
-            text-transparent
-            bg-gradient-to-r
-            from-purple-400
-            via-emerald-400
-            to-green-500
-            md:inline-block
+            text-3xl
+            font-extrabold
+            leading-10
+            tracking-tight
+            text-left text-white text-center
+            sm:leading-none
+            md:text-6xl
+            text-4xl
+            lg:text-7xl
           "
         >
-          ToDo<span
+          <span class="inline md:block">Vue3-Pinia-Supabase</span>
+          <span
             class="
+              mt-2
               bg-clip-text
               text-transparent
               bg-gradient-to-r
-              from-teal-500
-              via-cyon-400
-              to-purple-300
+              from-purple-400
+              via-emerald-400
+              to-green-500
+              md:inline-block
             "
           >
-            App</span
-          >
-        </span>
-      </h1>
-      
-    </div>
-  </section>
-
-  <hr class="text-white mx-5" />
-  <footer class="bg-black pb-5">
-    <div class="max-w-screen-xl px-4 pt-8 mx-auto sm:px-6 lg:px-8">
-      <div class="sm:flex sm:items-center sm:justify-between">
-        <div class="flex justify-center text-teal-300 sm:justify-start">
-          
-        </div>
-
-        <p class="mt-4 text-sm text-center text-gray-400 lg:text-right lg:mt-0">
-          Made with tailwind &nbsp; Paulo Almeida &nbsp; Privacy & Policy &nbsp; TodoApp
-        </p>
+            ToDo<span
+              class="
+                bg-clip-text
+                text-transparent
+                bg-gradient-to-r
+                from-teal-500
+                via-cyon-400
+                to-purple-300
+              "
+            >
+              App</span
+            >
+          </span>
+        </h1>
       </div>
-    </div>
-  </footer>
+    </section>
+
+    <hr class="text-white mx-5" />
+    <footer class="bg-black pb-5">
+      <div class="max-w-screen-xl px-4 pt-8 mx-auto sm:px-6 lg:px-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <div class="flex justify-center text-teal-300 sm:justify-start"></div>
+
+          <p
+            class="mt-4 text-sm text-center text-gray-400 lg:text-right lg:mt-0"
+          >
+            Made with tailwind &nbsp; Paulo Almeida &nbsp; Privacy & Policy
+            &nbsp; TodoApp
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script setup></script>
