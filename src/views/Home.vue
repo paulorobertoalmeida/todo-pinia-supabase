@@ -1,24 +1,28 @@
 <template>
-    <Nav />
-    <div class="h-100 bg-black 
+  <Nav />
+  <div
+    class="
+      h-300
+      bg-black
       w-full
       flex
       items-center
       justify-center
       bg-teal-lightest
       font-sans
-      ">
-      <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-        <NewTask @add-task="setNewTask" />
-        <TaskItem
-          :tasks="addNewTask.tasks"
-          @toggle-reminder="toggleReminder"
-          @delete-task="deleteTaskArr"
-        />
-      </div>
+    "
+  >
+    <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+      <NewTask @add-task="setNewTask" />
+      <TaskItem
+        :tasks="addNewTask.tasks"
+        @toggle-reminder="toggleReminder"
+        @delete-task="deleteTaskArr"
+        @change-name="changeName"
+      />
     </div>
-    <Footer />
-  
+  </div>
+  <Footer />
 </template>
 
 <script setup>
@@ -31,25 +35,26 @@ import NewTask from "../components/NewTask.vue";
 import Footer from "../components/Footer.vue";
 
 const addNewTask = useTaskStore();
-// onMounted(() => addNewTask.fetchTasks());
-// async created(){
-//   addNewTask.tasks = await addNewTask.fetchTasks();
-// };
+
 addNewTask.fetchTasks();
-// console.log(addNewTask.tasks)
-async function setNewTask(task) {
+ console.log(addNewTask.tasks)
+async function setNewTask(task){
   await addNewTask.addTask(task.name, task.description);
+  addNewTask.fetchTasks();
+};
+async function toggleReminder(task){
+  await addNewTask.toggleTask(task.is_complete, task.id);
+  addNewTask.fetchTasks();
+};
+async function deleteTaskArr(task){
+  await addNewTask.deleteTask(task.id);
+  addNewTask.fetchTasks();
+};
+async function changeName(task){
+  await addNewTask.editTask(task.title, task.id);
+  addNewTask.fetchTasks();
 }
-async function toggleReminder(task) {
-  // addNewTask.tasks = addNewTask.tasks.map((task) =>
-  // task.user_id === id ? {...task, is_complete: !task.is_complete} : task
-  // );
-  // await addNewTask.toggleTask();
-  console.log(task);
-}
-async function deleteTaskArr(task) {
-  // await addNewTask.deleteTask();
-}
+
 </script>
 
 <style>

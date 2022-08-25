@@ -1,5 +1,5 @@
 <template>
-  <form v-for="(task, index) in tasks" :key="index">
+  <div v-for="(task, index) in tasks" :key="index">
     <div class="flex mb-4 items-center">
       <div class="todo-title">
         <h3 :class="task.is_complete ? 'done' : ''" class="w-full text-grey-darkest">{{ task.title }}</h3>
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-  </form>
+  </div>
 </template>
 
 <script setup>

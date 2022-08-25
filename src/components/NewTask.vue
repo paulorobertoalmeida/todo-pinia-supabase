@@ -2,7 +2,7 @@
   <!-- component -->
   <form id="new-task" @submit.prevent="createNewTask">
     <div v-if="showErrorMessage">
-      <p class="error-text text-white">{{ errorMessage }}</p>
+      <p class="error-text text-red-500">{{ errorMessage }}</p>
     </div>
     <div>
       <div class="mb-4">
@@ -23,6 +23,7 @@
             "
             placeholder="Task Title"
           />
+          <br />
           <input
             v-model="description"
             class="
@@ -46,80 +47,15 @@
               p-2
               border-2
               rounded
-              text-teal
-              border-blue
-              hover:text-white hover:bg-teal
+              text-green-700
+              border-green-700
+              hover:text-white hover:bg-green-700
             "
           >
             Submit
           </button>
         </div>
       </div>
-      <!-- <div>
-        <div class="flex mb-4 items-center">
-          <p class="w-full text-grey-darkest">
-            Add another component to Tailwind Components
-          </p>
-          <button
-            class="
-              flex-no-shrink
-              p-2
-              ml-4
-              mr-2
-              border-2
-              rounded
-              hover:text-white
-              text-green
-              border-green
-              hover:bg-green
-            "
-          >
-            Done
-          </button>
-          <button
-            class="
-              flex-no-shrink
-              p-2
-              ml-2
-              border-2
-              rounded
-              text-red
-              border-red
-              hover:text-white hover:bg-red
-            "
-          >
-            Remove
-          </button>
-        </div>
-        <div class="flex mb-4 items-center">
-          <p class="w-full line-through text-green">
-            Submit Todo App Component to Tailwind Components
-          </p>
-          <button
-            class="
-              flex-no-shrink
-              p-2
-              ml-4
-              mr-2
-              border-2
-              rounded
-              hover:text-white
-              text-grey
-              border-grey
-              hover:bg-grey
-            "
-          >
-            Not Done
-          </button>
-          <button class="flex-no-shrink
-               ml-2
-              border-2
-              rounded
-              text-red
-              border-red
-              hover:text-white hover:bg-red">Remove</button>
-        </div>
-      </div> -->
     </div>
   </form>
 </template>
