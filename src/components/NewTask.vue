@@ -4,7 +4,7 @@
     <div v-if="showErrorMessage">
       <p class="error-text text-red-500">{{ errorMessage }}</p>
     </div>
-    <div>
+    <div class="">
       <div class="mb-4">
         <h1 class="font-mono text-2xl">My Todo List - {{ date }}</h1>
         <div class="flex mt-4">

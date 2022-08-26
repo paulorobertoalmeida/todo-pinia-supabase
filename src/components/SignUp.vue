@@ -19,7 +19,7 @@
       @submit.prevent="signUp"
     >
       <div class="text-center text-4xl font-medium">
-        Sign Up - Register to my App
+        Register to ToDo App
       </div>
 
       <div
