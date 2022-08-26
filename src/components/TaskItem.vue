@@ -5,7 +5,7 @@
       v-for="(task, index) in tasks"
       :key="index"
     >
-      <div class="">
+      <div :class="task.is_complete ? 'task-done' : 'task-done-not'">
         <p :class="task.is_complete ? 'done' : ''" class="todo-change-name w-full text-xl">
           {{ task.title }}
         </p>
@@ -87,7 +87,7 @@
             ease-in
           "
         >
-          <input :class="task.is_complete ? 'todo-change-state' : 'todo-change-state-not'" @click="toggleReminderTask(task.id, index)"
+          <input @click="toggleReminderTask(task.id, index)"
             type="checkbox"
             name="toggle"
             id="toggle"
@@ -117,7 +117,7 @@
             "
           ></label>
         </div>
-        <label for="toggle" class="button text-xs text-gray-700"></label>
+        <!-- <label for="toggle" class="button text-xs text-gray-700">my label</label> -->
       </div>
     </div>
   </div>
@@ -171,10 +171,13 @@ const changeNameTask = (id, index) => {
 .toggle-checkbox:checked + .toggle-label {
   @apply: bg-green-400;
   background-color: #68d391;
-  text-decoration: line-through;
 }
-.todo-change-name:checked + .todo-label {
-  @apply: ling-through
+
+.task-done{
+  text-decoration: line-through
+}
+.task-done-not{
+  
 }
 
 </style>
