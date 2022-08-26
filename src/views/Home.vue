@@ -3,7 +3,7 @@
     <Nav />
     <div
       class="
-        h-[350px]
+        h-screen
         bg-black
         w-full
         flex

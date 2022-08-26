@@ -6,7 +6,7 @@
       :key="index"
     >
       <div :class="task.is_complete ? 'task-done' : 'task-done-not'">
-        <p :class="task.is_complete ? 'done' : ''" class="todo-change-name w-full text-xl">
+        <p :class="task.is_complete ? 'done' : ''" class=" uppercase font-semibold w-full text-xl">
           {{ task.title }}
         </p>
         <div v-if="changeNameActive && idRef === task.id">
@@ -18,7 +18,7 @@
           />
         </div>
         <div>
-          <p class="text-sm">{{ task.description }}</p>
+          <p class="text-sm italic font-serif text-zinc-500">{{ task.description }}</p>
         </div>
       </div>
 
