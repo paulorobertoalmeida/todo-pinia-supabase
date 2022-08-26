@@ -3,7 +3,7 @@
     <Nav />
     <div
       class="
-        h-300
+        h-[350px]
         bg-black
         w-full
         flex
@@ -28,6 +28,7 @@
 </template>
 
 <script setup>
+
 import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import Nav from "../components/Nav.vue";

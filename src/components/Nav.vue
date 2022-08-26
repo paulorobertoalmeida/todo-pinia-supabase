@@ -1,20 +1,10 @@
 <template>
   <!-- component -->
-  <nav
-    id="header"
-    class="
-      w-full
-      z-30
-      top-10
-      py-1
-      bg-[#0b050e]
-      shadow-lg
-    "
-  >
+  <nav id="header" class="w-full z-30 top-10 py-1 bg-[#0b050e] shadow-lg">
     <div class="w-full flex items-center justify-between mt-0 px-6 py-2">
       <label for="menu-toggle" class="cursor-pointer md:hidden block">
         <svg
-          class="fill-current  text-gray-200"
+          class="fill-current text-gray-200"
           xmlns="http://www.w3.org/2000/svg"
           width="20"
           height="20"
@@ -25,7 +15,6 @@
         </svg>
       </label>
       <input class="hidden" type="checkbox" id="menu-toggle" />
-
       <div
         class="
           hidden
@@ -63,8 +52,7 @@
                 >Home</a
               >
             </li>
-            <li>
-            </li>
+            <li></li>
             <li>
               <a :to="route" id="signout" class="button-red" @click="signOut">
                 <span class="fa fa-info-circle"></span
@@ -87,20 +75,23 @@
         "
         id="nav-content"
       >
-        <div class="auth flex items-center w-full md:w-full  text-gray-200">
+        <div class="auth flex items-center w-full md:w-full text-gray-200">
           <p>
-            Welcome <span class="usuario-name  text-gray-200">{{ emailName[0] }}</span>
+            Welcome
+            <span class="usuario-name text-gray-200">{{ emailName[0] }}</span>
           </p>
           <button
             @click="signOut"
             class="
               button
-              bg-[#3EB642]
-              text-gray-200
+              bg-gradient-to-r
+              from-green-400
               p-2
+              m-1
               rounded
-              hover:bg-[#579A5D]hover:text-gray-100
-              mr-2
+              to-blue-500
+              hover:from-pink-500
+               hover:to-yellow-500 
             "
           >
             Log Out

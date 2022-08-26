@@ -1,17 +1,14 @@
 <template>
-  <div >
-    <div class="flex mb-4 items-center" v-for="(task, index) in tasks" :key="index">
-      <div>
-        <p :class="task.is_complete ? 'done' : ''" class="w-full text-xl">
+  <div>
+    <div
+      class="flex mb-4 items-center justify-between"
+      v-for="(task, index) in tasks"
+      :key="index"
+    >
+      <div class="">
+        <p :class="task.is_complete ? 'done' : ''" class="todo-change-name w-full text-xl">
           {{ task.title }}
         </p>
-        <div
-          :class="
-            task.is_complete ? 'todo-change-state' : 'todo-change-state-not'
-          "
-          @click="toggleReminderTask(task.id, index)"
-        ></div>
-
         <div v-if="changeNameActive && idRef === task.id">
           <input
             class="input-field-input"
@@ -25,7 +22,7 @@
         </div>
       </div>
 
-      <div class="flex space-between">
+      <div>
         <button
           class="
             button
@@ -63,7 +60,7 @@
         <button
           @click="deleteTask(task.id)"
           class="
-          button
+            button
             flex-no-shrink
             p-2
             ml-2
@@ -76,6 +73,51 @@
         >
           Remove
         </button>
+        <div
+          class="
+            relative
+            inline-block
+            w-10
+            mx-2
+            align-middle
+            item-center
+            select-none
+            transition
+            duration-200
+            ease-in
+          "
+        >
+          <input :class="task.is_complete ? 'todo-change-state' : 'todo-change-state-not'" @click="toggleReminderTask(task.id, index)"
+            type="checkbox"
+            name="toggle"
+            id="toggle"
+            class="
+              toggle-checkbox
+              absolute
+              block
+              w-6
+              h-6
+              rounded-full
+              bg-white
+              border-4
+              appearance-none
+              cursor-pointer
+            "
+          />
+          <label
+            for="toggle"
+            class="
+              toggle-label
+              block
+              overflow-hidden
+              h-6
+              rounded-full
+              bg-gray-300
+              cursor-pointer
+            "
+          ></label>
+        </div>
+        <label for="toggle" class="button text-xs text-gray-700"></label>
       </div>
     </div>
   </div>
@@ -112,11 +154,27 @@ const changeNameTask = (id, index) => {
   const taskToEdit = props.tasks.map((task) =>
     task.id === id ? { ...task, title: name.value } : task
   );
+  //console.log(taskToEdit[index]);
   emit("change-name", taskToEdit[index]);
   name.value = "";
   changeNameActive.value = false;
 };
 </script>
-
 <style>
+/* CHECKBOX TOGGLE SWITCH */
+/* @apply rules for documentation, these do not work as inline style */
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  right: 0;
+  border-color: #68d391;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+  background-color: #68d391;
+  text-decoration: line-through;
+}
+.todo-change-name:checked + .todo-label {
+  @apply: ling-through
+}
+
 </style>
