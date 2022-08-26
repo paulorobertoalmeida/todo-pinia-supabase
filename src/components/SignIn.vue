@@ -16,9 +16,9 @@
       class="flex w-[30rem] flex-col space-y-10 form-sign-in"
       @submit.prevent="signIn"
     >
-      <div class="text-center text-4xl font-medium">Sign In</div>
+      <div class="text-center text-4xl font-medium">ToDo App Sign In</div>
 
-      <PersonalRouter :route="route" :buttonText="buttonText" />
+      <!-- <PersonalRouter :route="route" :buttonText="buttonText" /> -->
       <div
         class="
           w-full
@@ -30,7 +30,7 @@
           focus-within:border-indigo-500
         "
       >
-        <p class="">nenoxvx@icloud.com</p>
+        
         <input
           type="email"
           placeholder="example@gmail.com"
@@ -84,11 +84,11 @@
         class="
           transform
           rounded-sm
-          bg-indigo-600
           py-2
           font-bold
-          duration-300
-          hover:bg-indigo-400
+          transition ease-[cubic-bezier(0.95,0.05,0.795,0.035)] duration-300
+          bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:ease-in marker:to-yellow-500
+         
         "
       >
         LOG IN
