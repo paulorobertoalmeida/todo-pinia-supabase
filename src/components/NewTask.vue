@@ -1,6 +1,6 @@
 <template>
   <!-- component -->
-  <form id="new-task" @submit.prevent="createNewTask">
+  <form id="new-task" @submit.prevent="createNewTask" class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
     <div v-if="showErrorMessage">
       <p class="error-text text-red-500">{{ errorMessage }}</p>
     </div>

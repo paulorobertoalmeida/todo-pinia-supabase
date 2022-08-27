@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
     <div
       class="flex mb-4 items-center justify-between"
       v-for="(task, index) in tasks"

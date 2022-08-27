@@ -13,7 +13,7 @@
         font-sans
       "
     >
-      <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+      <div >
         <NewTask @add-task="setNewTask" />
         <TaskItem
           :tasks="addNewTask.tasks"
