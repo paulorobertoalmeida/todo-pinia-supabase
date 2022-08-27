@@ -1,24 +1,31 @@
 <template>
-  <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
-    <div
-      class="flex mb-4 items-center justify-between"
+  <div>
+    <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg"
+      
       v-for="(task, index) in tasks"
       :key="index"
     >
-      <div :class="task.is_complete ? 'task-done' : 'task-done-not'">
-        <p :class="task.is_complete ? 'done' : ''" class=" uppercase font-semibold w-full text-xl">
-          {{ task.title }}
-        </p>
-        <div v-if="changeNameActive && idRef === task.id">
-          <input
-            class="input-field-input"
-            type="text"
-            placeholder="Edit title"
-            v-model="name"
-          />
-        </div>
-        <div>
-          <p class="text-sm italic font-serif text-zinc-500">{{ task.description }}</p>
+      <div class="flex mb-4 items-center justify-between">
+        <div :class="task.is_complete ? 'task-done' : 'task-done-not'">
+          <p
+            :class="task.is_complete ? 'done' : ''"
+            class="uppercase font-semibold w-full text-xl"
+          >
+            {{ task.title }}
+          </p>
+          <div v-if="changeNameActive && idRef === task.id">
+            <input
+              class="input-field-input"
+              type="text"
+              placeholder="Edit title"
+              v-model="name"
+            />
+          </div>
+          <div>
+            <p class="text-sm italic font-serif text-zinc-500">
+              {{ task.description }}
+            </p>
+          </div>
         </div>
       </div>
 
@@ -87,7 +94,8 @@
             ease-in
           "
         >
-          <input @click="toggleReminderTask(task.id, index)"
+          <input
+            @click="toggleReminderTask(task.id, index)"
             type="checkbox"
             name="toggle"
             id="toggle"
@@ -173,11 +181,9 @@ const changeNameTask = (id, index) => {
   background-color: #68d391;
 }
 
-.task-done{
-  text-decoration: line-through
+.task-done {
+  text-decoration: line-through;
 }
-.task-done-not{
-  
+.task-done-not {
 }
-
 </style>
