@@ -1,19 +1,16 @@
 <template>
-  <div class="bg-black">
+  <main>
     <Nav />
-    <div
-      class="
-        h-screen
+    <section class=" h-screen
         bg-black
         w-full
         flex
         items-center
         justify-center
         bg-teal-lightest
-        font-sans
-      "
-    >
-      <div ><SearchBar />
+        font-sans">
+      <div >
+        <SearchBar />
         <NewTask @add-task="setNewTask" />
         <TaskItem
           :tasks="addNewTask.tasks"
@@ -22,9 +19,9 @@
           @change-name="changeName"
         />
       </div>
-    </div>
+    </section>
     <Footer />
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -59,5 +56,12 @@ async function changeName(task) {
 }
 </script>
 
-<style>
+<style scoped>
+main{
+  @apply: bg-black
+}
+section {
+  @apply:
+}
+
 </style>
