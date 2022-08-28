@@ -1,19 +1,9 @@
 <template>
   <div class="header">
     <div class="subheader">
-      <label for="table-search" class="sr-only">Search</label>
-      <div class="relative mt-1 mx-10">
-        <div
-          class="
-            absolute
-            inset-y-0
-            left-0
-            flex
-            items-center
-            pl-3
-            pointer-events-none
-          "
-        >
+      <label for="table-search">Search</label>
+      <div class="inner-div">
+        <div>
           <svg
             class="w-5 h-5 text-gray-500 dark:text-gray-400"
             fill="currentColor"
@@ -30,8 +20,7 @@
         <input
           type="text"
           id="table-search"
-          class="
-            bg-gray-50
+          class="  bg-gray-50
             border border-gray-300
             text-gray-900 text-sm
             rounded-lg
@@ -46,6 +35,7 @@
             dark:text-white
             dark:focus:ring-blue-500
             dark:focus:border-blue-500
+           
           "
           placeholder="Search for items"
         />
@@ -59,10 +49,42 @@
 
 <style scoped>
 .header {
-    @apply: relative overflow-x-auto shadow-md sm:rounded-lg mt-5
+    @apply: relative overflow-x-auto shadow-md sm:rounded-lg mt-5 
 }
 .subheader {
     @apply: p-4
+}
+label{
+    @apply: sr-only 
+}
+.inner-div{
+    @apply: relative mt-1 flex justify-center
+}
+.block-div{
+    @apply: absolute
+            inset-y-0
+            left-0
+            flex
+            items-center
+            pl-3
+            pointer-events-none
+}
+.search-input { 
+ @apply: bg-gray-50
+            border border-gray-300
+            text-gray-900 text-sm
+            rounded-lg
+            focus:ring-blue-500 focus:border-blue-500
+            block
+            w-80
+            pl-10
+            p-2.5
+            dark:bg-gray-700
+            dark:border-gray-600
+            dark:placeholder-gray-400
+            dark:text-white
+            dark:focus:ring-blue-500
+            dark:focus:border-blue-500
 }
 
 </style>
