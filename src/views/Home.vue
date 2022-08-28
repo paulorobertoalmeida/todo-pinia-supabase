@@ -13,7 +13,7 @@
         font-sans
       "
     >
-      <div >
+      <div ><SearchBar />
         <NewTask @add-task="setNewTask" />
         <TaskItem
           :tasks="addNewTask.tasks"
@@ -33,6 +33,7 @@ import { ref } from "vue";
 import { useTaskStore } from "../stores/task";
 import Nav from "../components/Nav.vue";
 import TaskItem from "../components/TaskItem.vue";
+import SearchBar from "../components/SearchBar.vue";
 import NewTask from "../components/NewTask.vue";
 import Footer from "../components/Footer.vue";
 
