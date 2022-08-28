@@ -1,6 +1,6 @@
 <template>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
-    <div class="p-4">
+  <div class="header">
+    <div class="subheader">
       <label for="table-search" class="sr-only">Search</label>
       <div class="relative mt-1 mx-10">
         <div
@@ -57,5 +57,13 @@
 <script setup>
 </script>
 
-<style>
+<style scoped>
+.header {
+    @apply: relative overflow-x-auto shadow-md sm:rounded-lg mt-5
+}
+.subheader {
+    @apply: p-4
+}
+
 </style>
+
