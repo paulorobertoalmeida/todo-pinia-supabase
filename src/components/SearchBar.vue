@@ -1,8 +1,8 @@
 <template>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
     <div class="p-4">
       <label for="table-search" class="sr-only">Search</label>
-      <div class="relative mt-1 mx-auto">
+      <div class="relative mt-1 mx-10">
         <div
           class="
             absolute
