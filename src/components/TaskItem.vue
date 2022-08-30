@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg"
+    <div class="container"
       
       v-for="(task, index) in tasks"
       :key="index"
@@ -169,6 +169,9 @@ const changeNameTask = (id, index) => {
 };
 </script>
 <style>
+.container{
+  @apply: bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg
+}
 /* CHECKBOX TOGGLE SWITCH */
 /* @apply rules for documentation, these do not work as inline style */
 .toggle-checkbox:checked {
