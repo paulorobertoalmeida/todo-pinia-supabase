@@ -3,14 +3,7 @@
     <section>
       <div
         class="
-          max-w-lg
-          bg-black
-          px-4
-          pt-24
-          py-8
-          mx-auto
-          text-left
-          md:max-w-none md:text-center
+          container
         "
       >
         <h1
@@ -76,4 +69,15 @@
 
 <script setup></script>
 
-<style></style>
+<style>
+.container{
+  @apply: max-w-lg
+          bg-black
+          px-4
+          pt-24
+          py-8
+          mx-auto
+          text-left
+          md:max-w-none md:text-center
+}
+</style>
