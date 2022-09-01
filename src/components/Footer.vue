@@ -1,24 +1,8 @@
 <template>
-  <div class="bg-black ">
+  <div class="bg-black">
     <section>
-      <div
-        class="
-          container
-        "
-      >
-        <h1
-          class="
-            text-3xl
-            font-extrabold
-            leading-10
-            tracking-tight
-            text-left text-white text-center
-            sm:leading-none
-            md:text-6xl
-            text-4xl
-            lg:text-7xl
-          "
-        >
+      <div class="container">
+        <h1 class="main-footer">
           <span class="inline md:block">Vue3-Pinia-Supabase</span>
           <span
             class="
@@ -70,14 +54,12 @@
 <script setup></script>
 
 <style>
-.container{
-  @apply: max-w-lg
-          bg-black
-          px-4
-          pt-24
-          py-8
-          mx-auto
-          text-left
-          md:max-w-none md:text-center
+.container {
+  @apply: max-w-lg bg-black px-4 pt-24 py-8 mx-auto text-left md: max-w-none md:
+    text-center;
+}
+.main-footer {
+  @apply: text-3xl font-extrabold leading-10 tracking-tight text-left text-white
+    text-center sm: leading-none md: text-6xl text-4xl lg: text-7xl;
 }
 </style>
