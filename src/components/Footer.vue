@@ -4,18 +4,7 @@
       <div class="container">
         <h1 class="main-footer">
           <span class="inline md:block">Vue3-Pinia-Supabase</span>
-          <span
-            class="
-              mt-2
-              bg-clip-text
-              text-transparent
-              bg-gradient-to-r
-              from-purple-400
-              via-emerald-400
-              to-green-500
-              md:inline-block
-            "
-          >
+          <span class="">
             ToDo<span
               class="
                 bg-clip-text
@@ -61,5 +50,9 @@
 .main-footer {
   @apply: text-3xl font-extrabold leading-10 tracking-tight text-left text-white
     text-center sm: leading-none md: text-6xl text-4xl lg: text-7xl;
+}
+span {
+  @apply: mt-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400
+    via-emerald-400 to-green-500 md: inline-block;
 }
 </style>
