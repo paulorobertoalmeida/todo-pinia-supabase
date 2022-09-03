@@ -4,20 +4,7 @@
       <div class="container">
         <h1 class="main-footer">
           <span class="inline md:block">Vue3-Pinia-Supabase</span>
-          <span class="">
-            ToDo<span
-              class="
-                bg-clip-text
-                text-transparent
-                bg-gradient-to-r
-                from-teal-500
-                via-cyon-400
-                to-purple-300
-              "
-            >
-              App</span
-            >
-          </span>
+          <span class=""> ToDo<span class="inner-span"> App</span> </span>
         </h1>
       </div>
     </section>
@@ -54,5 +41,9 @@
 span {
   @apply: mt-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400
     via-emerald-400 to-green-500 md: inline-block;
+}
+.inner-span {
+  @apply: bg-clip-text text-transparent bg-gradient-to-r from-teal-500
+    via-cyon-400 to-purple-300;
 }
 </style>
