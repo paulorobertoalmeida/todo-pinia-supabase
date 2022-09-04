@@ -16,7 +16,7 @@
           <div class="flex justify-center text-teal-300 sm:justify-start"></div>
 
           <p
-            class="mt-4 text-sm text-center text-gray-400 lg:text-right lg:mt-0"
+            class=""
           >
             Made with tailwind &nbsp; Paulo Almeida &nbsp; Privacy & Policy
             &nbsp; TodoApp
@@ -45,5 +45,8 @@ span {
 .inner-span {
   @apply: bg-clip-text text-transparent bg-gradient-to-r from-teal-500
     via-cyon-400 to-purple-300;
+}
+p{
+  @apply: mt-4 text-sm text-center text-gray-400 lg:text-right lg:mt-0
 }
 </style>
