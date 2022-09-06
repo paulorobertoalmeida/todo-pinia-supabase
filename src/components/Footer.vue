@@ -1,10 +1,13 @@
 <template>
   <div class="bg-black">
     <section>
-      <div class="container">
-        <h1 class="main-footer">
+      <div class="max-w-lg bg-black px-4 pt-24 py-8 mx-auto text-left md: max-w-none md:
+    text-center">
+        <h1 class="text-3xl font-extrabold leading-10 tracking-tight text-left text-white
+    text-center sm: leading-none md: text-6xl text-4xl lg: text-7xl">
           <span class="inline md:block">Vue3-Pinia-Supabase</span>
-          <span class=""> ToDo<span class="inner-span"> App</span> </span>
+          <span class="mt-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-400
+    via-emerald-400 to-green-500 md: inline-block"> ToDo<span class="inner-span"> App</span> </span>
         </h1>
       </div>
     </section>
@@ -16,7 +19,8 @@
           <div class="flex justify-center text-teal-300 sm:justify-start"></div>
 
           <p
-            class=""
+            class="bg-clip-text text-transparent bg-gradient-to-r from-teal-500
+    via-cyon-400 to-purple-300"
           >
             Made with tailwind &nbsp; Paulo Almeida &nbsp; Privacy & Policy
             &nbsp; TodoApp
@@ -30,10 +34,7 @@
 <script setup></script>
 
 <style>
-.container {
-  @apply: max-w-lg bg-black px-4 pt-24 py-8 mx-auto text-left md: max-w-none md:
-    text-center;
-}
+
 .main-footer {
   @apply: text-3xl font-extrabold leading-10 tracking-tight text-left text-white
     text-center sm: leading-none md: text-6xl text-4xl lg: text-7xl;
